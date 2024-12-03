@@ -87,7 +87,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-cyan-400 text-cyan-300  hover:border-cyan-500 hover:text-cyan-400"
+                  className="border-cyan-400 bg-white text-cyan-300 hover:bg-cyan-300 hover:text-white"
                 >
                   Learn More
                 </Button>
