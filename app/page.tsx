@@ -1,101 +1,161 @@
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { CheckCircle, MenuIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const plans = [
+    {
+      name: "Free Plan",
+      description: "Perfect for getting started",
+      price: "$0",
+      features: [
+        "Boost engagement with target responses",
+        "Automate comment replies to enhance audience interaction",
+        "Turn followers into customers with targeted messaging",
+      ],
+      cta: "Get Started",
+    },
+    {
+      name: "Smart AI Plan",
+      description: "Advanced features for power users",
+      price: "$99",
+      features: [
+        "All features from Free Plan",
+        "AI-powered response generation",
+        "Advanced analytics and insights",
+        "Priority customer support",
+        "Custom branding options",
+      ],
+      cta: "Upgrade Now",
+    },
+  ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="relative bg-gradient-to-b from-gray-950 via-slate-800 to-gray-900 text-white mx-auto flex flex-col ">
+      {/* Hero Section */}
+      <section className="flex flex-col ">
+        <div className="" />
+        <div className="relative">
+          <div className=" px-4 py-12">
+            <div className="flex items-center justify-between mx-5">
+              <div className="flex items-center gap-2 ">
+                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center font-bold text-white">
+                  li
+                </div>
+                <span className="text-xl font-semibold">Slide</span>
+              </div>
+              <nav className="hidden space-x-6 text-sm text-cyan-300 md:block">
+                <Link href="#features" className="hover:text-white">
+                  Features
+                </Link>
+                <Link href="#pricing" className="hover:text-white">
+                  Pricing
+                </Link>
+                <Link href="#about" className="hover:text-white">
+                  About
+                </Link>
+              </nav>
+              <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600">
+                <Link href="/dashboard">Login</Link>
+              </Button>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="mx-auto mt-16 max-w-3xl text-center">
+              <h1 className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl lg:text-6xl">
+                Transform Your Instagram Engagement with Slide
+              </h1>
+              <p className="mt-6 text-lg text-cyan-300">
+                Slide revolutionizes how you connect with your audience on
+                Instagram. Automate responses and boost engagement effortlessly,
+                turning interactions into valuable business opportunities.
+              </p>
+              <div className="mt-8 flex justify-center gap-4">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white"
+                >
+                  Get Started
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-cyan-400 text-cyan-300  hover:border-cyan-500 hover:text-cyan-400"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+            <div className="relative w-full h-40 md:h-60 mt-28">
+              <Image
+               fill
+                src="/Ig-creators.png"
+                alt="Community member"
+                className="object-cover rounded-xl "
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="container w-full py-12 md:py-24 lg:py-32 flex flex-col mx-auto text-white">
+        <div className="container px-4 md:px-6 ">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center ">
+            <h2 className="text-3xl  font-bold tracking-tighter sm:text-5xl">
+              Choose Your Plan
+            </h2>
+            <p className="max-w-[900px] text-lg text-cyan-300">
+              Select the perfect plan to boost your Instagram engagement
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 md:gap-8">
+            {plans.map((plan, index) => (
+              <Card
+                key={index}
+                className="flex flex-col justify-between bg-gradient-to-b from-gray-800 to-gray-900 text-white "
+              >
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold">
+                    {plan.name}
+                  </CardTitle>
+                  <CardDescription className="text-cyan-300">
+                    {plan.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                  <div className="text-4xl font-bold">
+                    {plan.price}
+                    <span className="text-lg font-normal text-cyan-400">
+                      /month
+                    </span>
+                  </div>
+                  <ul className="space-y-2">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-center">
+                        <CheckCircle className="mr-2 h-4 w-4 text-cyan-400" />
+                        <span className="text-sm text-cyan-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                    {plan.cta}
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
