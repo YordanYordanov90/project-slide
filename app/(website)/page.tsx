@@ -7,37 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle, MenuIcon } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { PLANS } from "../../constants/page";
 
 export default function Home() {
-  const plans = [
-    {
-      name: "Free Plan",
-      description: "Perfect for getting started",
-      price: "$0",
-      features: [
-        "Boost engagement with target responses",
-        "Automate comment replies to enhance audience interaction",
-        "Turn followers into customers with targeted messaging",
-      ],
-      cta: "Get Started",
-    },
-    {
-      name: "Smart AI Plan",
-      description: "Advanced features for power users",
-      price: "$99",
-      features: [
-        "All features from Free Plan",
-        "AI-powered response generation",
-        "Advanced analytics and insights",
-        "Priority customer support",
-        "Custom branding options",
-      ],
-      cta: "Upgrade Now",
-    },
-  ];
   return (
     <main className="relative bg-gradient-to-b from-gray-950 via-slate-800 to-gray-900 text-white mx-auto flex flex-col ">
       {/* Hero Section */}
@@ -52,7 +27,7 @@ export default function Home() {
                 </div>
                 <span className="text-xl font-semibold">Slide</span>
               </div>
-              <nav className="hidden space-x-6 text-sm text-cyan-300 md:block">
+              <nav className="hidden space-x-6 text-lg text-cyan-300 md:block">
                 <Link href="#features" className="hover:text-white">
                   Features
                 </Link>
@@ -95,7 +70,7 @@ export default function Home() {
             </div>
             <div className="relative w-full h-40 md:h-60 mt-28">
               <Image
-               fill
+                fill
                 src="/Ig-creators.png"
                 alt="Community member"
                 className="object-cover rounded-xl "
@@ -117,7 +92,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2 md:gap-8">
-            {plans.map((plan, index) => (
+            {PLANS.map((plan, index) => (
               <Card
                 key={index}
                 className="flex flex-col justify-between bg-gradient-to-b from-gray-800 to-gray-900 text-white "
